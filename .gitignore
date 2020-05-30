@@ -1,5 +1,8 @@
 node_modules
+images
+config
+public/images
+public/avatar
 package-lock.json
 .idea
 .env
-sysenv.txt
