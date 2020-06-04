@@ -120,7 +120,7 @@ router.delete('/:id', auth, async (req, res) => {
         if (!task) {
             return res.status(404).send({error: 'this task does not exist'})
         }
-        res.status(200).redirect('/tasks')
+        res.send(task)
     } catch (e) {
         res.status(500).send(e)
     }

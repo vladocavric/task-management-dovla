@@ -45,15 +45,5 @@ mongoose.connect(mongo, {
 app.get('*', function (req, res) {
     res.send('404');
 });
-//======================================================================================================================
-//  SERVER
-app.listen(port, (err) => {
-    if (err) {
-        console.log(err)
-    } else {
-        console.log(`Server is working on port ${port}`)
-    }
-});
 
-//======================================================================================================================
-
+module.exports = app

@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/env-cmd -f ./config/test.env jest --watch --runInBand",
     "start": "node src/app.js",
-    "dev": "./node_modules/.bin/env-cmd -f ./config/dev.env nodemon src/app.js -e js,hbs"
+    "dev": "./node_modules/.bin/env-cmd -f ./config/dev.env nodemon src/index.js -e js,hbs"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -21,7 +24,9 @@
   "homepage": "https://github.com/vladocavric/task-management-dovla#readme",
   "devDependencies": {
     "env-cmd": "^10.1.0",
-    "nodemon": "^2.0.3"
+    "jest": "^26.0.1",
+    "nodemon": "^2.0.3",
+    "supertest": "^4.0.2"
   },
   "dependencies": {
     "@sendgrid/mail": "^6.3.1",
